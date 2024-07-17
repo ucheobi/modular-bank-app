@@ -5,7 +5,7 @@ import TotalBalanceBox from "@/components/TotalBalanceBox";
 const Home = () => {
   const loggedIn = {
     firstName: "Uche",
-    lastName: "Obiefula",
+    lastName: "Anota",
     email: "uche.anota@yahoo.com",
   };
 

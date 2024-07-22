@@ -1,9 +1,4 @@
-import {
-  FormControl,
-  FormField,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { FormControl, FormField, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { authFormSchema } from "@/lib/utils";
 import { Control, FieldPath } from "react-hook-form";
@@ -18,12 +13,7 @@ interface CustomInputProps {
   placeholder: string;
 }
 
-const CustomInput = ({
-  control,
-  name,
-  label,
-  placeholder,
-}: CustomInputProps) => {
+const CustomInput = ({ control, name, label, placeholder }: CustomInputProps) => {
   return (
     <FormField
       control={control}

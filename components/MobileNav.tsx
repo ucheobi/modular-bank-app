@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { sidebarLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -28,16 +23,8 @@ const MobileNav = ({ user }: MobileNavProps) => {
           />
         </SheetTrigger>
         <SheetContent side="left" className="border-none bg-white">
-          <Link
-            href="/"
-            className="flex cursor-pointer items-center gap-1 px-4"
-          >
-            <Image
-              src="/icons/logo.svg"
-              width={34}
-              height={34}
-              alt="Horizon logo"
-            />
+          <Link href="/" className="flex cursor-pointer items-center gap-1 px-4">
+            <Image src="/icons/logo.svg" width={34} height={34} alt="Horizon logo" />
             <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
               Horizon
             </h1>
@@ -48,8 +35,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
               <nav className="flex h-full flex-col gap-6 pt-16 text-white">
                 {sidebarLinks.map((item) => {
                   const isActive =
-                    pathname === item.route ||
-                    pathname.startsWith(`${item.route}/`);
+                    pathname === item.route || pathname.startsWith(`${item.route}/`);
 
                   return (
                     <SheetClose asChild key={item.route}>

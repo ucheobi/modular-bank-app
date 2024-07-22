@@ -48,15 +48,9 @@ export const formatDateTime = (dateString: Date) => {
     dateDayOptions
   );
 
-  const formattedDate: string = new Date(dateString).toLocaleString(
-    "en-US",
-    dateOptions
-  );
+  const formattedDate: string = new Date(dateString).toLocaleString("en-US", dateOptions);
 
-  const formattedTime: string = new Date(dateString).toLocaleString(
-    "en-US",
-    timeOptions
-  );
+  const formattedTime: string = new Date(dateString).toLocaleString("en-US", timeOptions);
 
   return {
     dateTime: formattedDateTime,
@@ -130,9 +124,7 @@ export function getAccountTypeColors(type: AccountTypes) {
   }
 }
 
-export function countTransactionCategories(
-  transactions: Transaction[]
-): CategoryCount[] {
+export function countTransactionCategories(transactions: Transaction[]): CategoryCount[] {
   const categoryCounts: { [category: string]: number } = {};
   let totalCount = 0;
 
@@ -203,8 +195,7 @@ export const authFormSchema = (type: string) =>
     address1: type === "sign-in" ? z.string().optional() : z.string().max(50),
     city: type === "sign-in" ? z.string().optional() : z.string().max(50),
     state: type === "sign-in" ? z.string().optional() : z.string().min(2),
-    postalCode:
-      type === "sign-in" ? z.string().optional() : z.string().min(3).max(6),
+    postalCode: type === "sign-in" ? z.string().optional() : z.string().min(3).max(6),
     dateOfBirth: type === "sign-in" ? z.string().optional() : z.string().min(3),
     ssn: type === "sign-in" ? z.string().optional() : z.string().min(3),
     // sign in

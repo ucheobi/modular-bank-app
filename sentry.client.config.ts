@@ -5,12 +5,14 @@
 import * as Sentry from "@sentry/nextjs";
 
 Sentry.init({
+  // eslint-disable-next-line max-len
   dsn: "https://bf026ad31865f8937bb042ebd1807c1d@o4507644700983297.ingest.de.sentry.io/4507644704784464",
 
   // Adjust this value in production, or use tracesSampler for greater control
   tracesSampleRate: 1,
 
-  // Setting this option to true will print useful information to the console while you're setting up Sentry.
+  // Setting this option to true will print useful information to the
+  // console while you're setting up Sentry.
   debug: false,
 
   replaysOnErrorSampleRate: 1.0,
@@ -19,7 +21,8 @@ Sentry.init({
   // in development and sample at a lower rate in production
   replaysSessionSampleRate: 0.1,
 
-  // You can remove this option if you're not planning to use the Sentry Session Replay feature:
+  // You can remove this option if you're not planning to
+  // use the Sentry Session Replay feature:
   integrations: [
     Sentry.replayIntegration({
       // Additional Replay configuration goes in here, for example:

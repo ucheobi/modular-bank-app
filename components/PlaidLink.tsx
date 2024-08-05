@@ -16,7 +16,7 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
     };
 
     getLinkToken();
-  }, []);
+  }, [user]);
 
   const onSuccess = useCallback<PlaidLinkOnSuccess>(
     async (public_token: string) => {
@@ -27,7 +27,7 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
 
       router.push("/");
     },
-    [user]
+    [user, router]
   );
 
   const config: PlaidLinkOptions = {
@@ -45,7 +45,7 @@ const PlaidLink = ({ user, variant }: PlaidLinkProps) => {
         </Button>
       ) : variant === "ghost" ? (
         <Button onClick={() => open()} className="plaidlink-ghost">
-           <Image
+          <Image
             src="/icons/connect-bank.svg"
             alt="connect bank"
             width={24}
